@@ -11,6 +11,9 @@ class MessageParser {
     if (lowerCaseMessage.includes("hello")) {
       this.actionProvider.greet()
     }
+    if (lowerCaseMessage.includes("zoning")) {
+        this.actionProvider.handleZoningList();
+      }
   }
 }
 
