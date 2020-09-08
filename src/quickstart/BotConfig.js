@@ -21,19 +21,19 @@ const config = {
       props: {
         options: [
           {
-            text: "Introduction to JS",
+            text: "Introduction to Zoning",
             url:
               "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
             id: 1,
           },
           {
-            text: "Mozilla JS Guide",
+            text: "Zoning and me",
             url:
               "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
             id: 2,
           },
           {
-            text: "Frontend Masters",
+            text: "Zoning Masters",
             url: "https://frontendmasters.com",
             id: 3,
           },

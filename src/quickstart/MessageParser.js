@@ -9,11 +9,15 @@ class MessageParser {
     const lowerCaseMessage = message.toLowerCase()
     
     if (lowerCaseMessage.includes("hello")) {
-      this.actionProvider.greet()
+      this.actionProvider.greet();
+      return;
     }
     if (lowerCaseMessage.includes("zoning")) {
         this.actionProvider.handleZoningList();
+        return;
       }
+    this.actionProvider.handleNoAnswerMatched(message);  
+
   }
 }
 
