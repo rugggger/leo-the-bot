@@ -1,4 +1,5 @@
 // ActionProvider starter code
+import SlackService from "../services/slack.service";
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
@@ -6,8 +7,8 @@ class ActionProvider {
   }
 
   greet() {
-    const greetingMessage = this.createChatBotMessage("Hi, friend.")
-    this.updateChatbotState(greetingMessage)
+    const greetingMessage = this.createChatBotMessage("Hi, friend.");
+    this.updateChatbotState(greetingMessage);
   }
 
   handleZoningList = () => {
@@ -21,23 +22,29 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  handleNoAnswerMatched(parsedMessage){
+  handleNoAnswerMatched(parsedMessage) {
     const message = this.createChatBotMessage(
-        `Sorry, I don't understand "${parsedMessage}"`,
-      );
-  
-      this.updateChatbotState(message);
+      `Sorry, I don't understand "${parsedMessage}"`,
+      {
+        widget: "thumbs",
+      }
+    );
+
+    this.updateChatbotState(message);
+  }
+
+  handleThumbsDown() {
+    SlackService.sendMessage("send a message to slack", "leo_test");
   }
 
   updateChatbotState(message) {
- 
     // NOTE: This function is set in the constructor, and is passed in      // from the top level Chatbot component. The setState function here     // actually manipulates the top level state of the Chatbot, so it's     // important that we make sure that we preserve the previous state.
-     
-        
-       this.setState(prevState => ({
-            ...prevState, messages: [...prevState.messages, message]
-        }))
-      }
+
+    this.setState((prevState) => ({
+      ...prevState,
+      messages: [...prevState.messages, message],
+    }));
+  }
 }
 
 export default ActionProvider;

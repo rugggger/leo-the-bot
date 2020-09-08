@@ -2,7 +2,7 @@ import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import LearningOptions from "../LearningOptions/LearningOptions";
 import LinkList from "../LinkLists/LinkList";
-
+import Thumbs from "../Thumbs/Thumbs";
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
@@ -40,6 +40,11 @@ const config = {
         ],
       },
     },
+    {
+        widgetName: "thumbs",
+        widgetFunc: (props) => <Thumbs {...props} />,
+
+    }
   ],
   customStyles: {
     botMessageBox: {
