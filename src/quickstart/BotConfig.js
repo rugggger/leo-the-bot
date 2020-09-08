@@ -3,6 +3,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import LearningOptions from "../LearningOptions/LearningOptions";
 import LinkList from "../LinkLists/LinkList";
 import Thumbs from "../Thumbs/Thumbs";
+import BotAvatar from "../chatCustomComponents/BotAvatar";
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
@@ -46,6 +47,9 @@ const config = {
         mapStateToProps: ["lastMessage","messages"],
     }
   ],
+  customComponents: {
+    botAvatar: (props)=> <BotAvatar></BotAvatar>
+  },
   customStyles: {
     botMessageBox: {
       backgroundColor: "#376B7E",

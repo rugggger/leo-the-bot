@@ -11,6 +11,10 @@ const emojis = {
     thumbsdown: {
         aria: "thumbsdown",
         code: "&#128078;"
+    },
+    robot: {
+        aria: "robot",
+        code: "&#129302;"
     }
 }
 const Emoji = (props) => {
