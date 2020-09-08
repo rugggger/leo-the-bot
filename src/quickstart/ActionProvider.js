@@ -22,6 +22,28 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
+  handleSessionReplayList= () => {
+    const message = this.createChatBotMessage(
+      "Brilliant, I've got the some interesting resources for you on Session Replay:",
+      {
+        widget: "sessionReplayLinks",
+      }
+    );
+
+    this.updateChatbotState(message);
+  };
+
+  handleCsLiveList= () => {
+    const message = this.createChatBotMessage(
+      "Yeah we have something new on CS Live but we do have guideline for it:",
+      {
+        widget: "csLiveLinks",
+      }
+    );
+
+    this.updateChatbotState(message);
+  };
+
   handleNoAnswerMatched(parsedMessage) {
     const message = this.createChatBotMessage(
       `Sorry, I don't understand "${parsedMessage}"`,
