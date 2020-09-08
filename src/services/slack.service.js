@@ -19,6 +19,9 @@ export default class SlackService {
             text: "sent from chatbot"
         }
         console.log('send message to slack ', message, channel);
+        if (process.env.NODE_ENV==='development') {
+            return;
+        }
 
         await axios.post(url, JSON.stringify(data), {
             withCredentials: false,

@@ -33,8 +33,8 @@ class ActionProvider {
     this.updateChatbotState(message);
   }
 
-  handleThumbsDown() {
-    SlackService.sendMessage("send a message to slack", "leo_test");
+  handleThumbsDown(message) {
+    SlackService.sendMessage(message, "leo_test");
   }
 
   updateChatbotState(message) {

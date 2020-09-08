@@ -43,7 +43,7 @@ const config = {
     {
         widgetName: "thumbs",
         widgetFunc: (props) => <Thumbs {...props} />,
-
+        mapStateToProps: ["lastMessage","messages"],
     }
   ],
   customStyles: {

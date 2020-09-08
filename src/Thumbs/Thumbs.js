@@ -2,14 +2,19 @@ import React from "react";
 import Emoji from "../misc/Emoji";
 
 const Thumbs = (props) => {
-  console.log('props th',props)
+  const { messages, actionProvider } = props;
+  const { handleThumbsDown } = actionProvider;
+  const getLastMessage = ()=>{
+    return messages[messages.length-2].message
+  }
+  const lastMessage = getLastMessage();
   return (
       <div>
           <button
           onClick={()=>{console.log('clicked ', props); }}
           ><Emoji emoji={"thumbsup"}/></button>
           <button
-            onClick={props.actionProvider.handleThumbsDown}
+            onClick={()=>{handleThumbsDown(lastMessage)}}
           ><Emoji emoji={"thumbsdown"}/></button>
       </div>
   );
