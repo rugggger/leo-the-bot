@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LinkList.css";
 
 const LinkList = (props) => {
-  //const [message, setMessage] = useState(null);
+  const { answer } = props;
 
-    console.log('props are ', props);
-  const { answer , messages } = props;
-  const message = messages[messages.length-1];
-  console.log('message id is ', message)
-  if (!answer) {
-    return null
-  }
-  const linksWidget = answer.widgets.find(w => w.type === 'Links');
-  if (!linksWidget) {
-    return null
-  }
-  const options = linksWidget.params.options;
-  const linkMarkup = options.map((link) => (
+  const [ list , setList] = useState([]);
+
+  useEffect(()=>{
+    const linksWidget = answer.widgets.find(w => w.type === 'Links');
+    if (!linksWidget) {
+      return null
+    }
+    setList(linksWidget.params.options);
+  },[]);
+
+
+  const linkMarkup = list.map((link) => (
     <li key={link.id} className="link-list-item">
       <a
         href={link.url}
