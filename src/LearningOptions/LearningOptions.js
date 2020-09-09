@@ -11,8 +11,16 @@ const LearningOptions = (props) => {
       handler: props.actionProvider.handleZoningList,
       id: 1,
     },
-    { text: "Session-Replay", handler: () => {}, id: 2 },
-    { text: "Security", handler: () => {}, id: 3 },
+    { 
+      text: "Session Replay", 
+      handler: props.actionProvider.handleSessionReplayList,
+      id: 2 
+    },
+    { 
+      text: "CS Live", 
+      handler: props.actionProvider.handleCsLiveList,
+      id: 3 
+    },
   ];
 
   const optionsMarkup = options.map((option) => (

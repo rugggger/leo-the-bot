@@ -26,11 +26,16 @@ class MessageParser {
     if (lowerCaseMessage.includes("hello")) {
       this.actionProvider.greet();
       return;
-    }
-    if (lowerCaseMessage.includes("zoning")) {
+    } else if (lowerCaseMessage.includes("zoning")) {
         this.actionProvider.handleZoningList();
         return;
-      }
+    } else if (lowerCaseMessage.includes("session") || lowerCaseMessage.includes("replay")) {
+        this.actionProvider.handleSessionReplayList();
+        return;
+    } else if (lowerCaseMessage.includes("live")) {
+        this.actionProvider.handleCsLiveList();
+        return;
+    }
     this.actionProvider.handleNoAnswerMatched(message);  
 
   }
