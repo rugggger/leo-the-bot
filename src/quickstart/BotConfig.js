@@ -1,9 +1,10 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import LearningOptions from "../LearningOptions/LearningOptions";
-import LinkList from "../LinkLists/LinkList";
-import Thumbs from "../Thumbs/Thumbs";
+import LinkList from "../widgets/LinkLists/LinkList";
+import Thumbs from "../widgets/Thumbs/Thumbs";
 import BotAvatar from "../chatCustomComponents/BotAvatar";
+import Walkme from "../widgets/Walkme/Walkme";
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
@@ -25,7 +26,14 @@ const config = {
         widgetName: "thumbs",
         widgetFunc: (props) => <Thumbs {...props} />,
         mapStateToProps: ["lastMessage","messages"],
+    },
+    {
+        widgetName: "Walkme",
+        widgetFunc: (props) => <Walkme {...props} />,
+        mapStateToProps: ["answer","messages"],
+
     }
+
   ],
   customComponents: {
     botAvatar: (props)=> <BotAvatar></BotAvatar>

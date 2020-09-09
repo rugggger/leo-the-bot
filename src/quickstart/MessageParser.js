@@ -34,6 +34,8 @@ class MessageParser {
     switch (answer.answerType) {
         case "text_with_links": this.actionProvider.handleTextWithLinks(answer.answerText);
         break;
+        case "walkme": this.actionProvider.handleWalkme(answer.answerText);
+        break;
         default:
             this.defaultMethods(message);
         
@@ -42,7 +44,7 @@ class MessageParser {
   }
   async parse(message) {
     console.log(message);
-    console.log('state',this.state);
+    console.log('current state',this.state);
     const answers = await QuestionsService.getPossibleAnswers(message);
     console.log('answers',answers);
     const answer = this.getBestAnswer(answers);

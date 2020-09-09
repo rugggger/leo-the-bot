@@ -26,6 +26,16 @@ class ActionProvider {
       this.updateChatbotState(message);
 
   }
+  handleWalkme(answerText) {
+    const message = this.createChatBotMessage(
+        answerText,
+        {
+          widget: "Walkme",
+        }
+      );
+  
+      this.updateChatbotState(message);
+  }
   greet() {
     const greetingMessage = this.createChatBotMessage("Hi, friend.");
     this.updateChatbotState(greetingMessage);

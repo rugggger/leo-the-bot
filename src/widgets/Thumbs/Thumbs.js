@@ -1,5 +1,5 @@
 import React from "react";
-import Emoji from "../misc/Emoji";
+import Emoji from "../../misc/Emoji";
 import Button from "@material-ui/core/Button";
 
 const Thumbs = (props) => {

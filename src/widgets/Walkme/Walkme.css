@@ -1,0 +1,15 @@
+
+
+.walkme-list {
+    padding: 0;
+    list-style: none;
+
+  }
+  
+  .walkme-list-item {
+    text-align: left;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  
