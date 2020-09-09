@@ -19,7 +19,7 @@ class ActionProvider {
     const message = this.createChatBotMessage(
         answerText,
         {
-          widget: "zoningLinks",
+          widget: "Links",
         }
       );
   

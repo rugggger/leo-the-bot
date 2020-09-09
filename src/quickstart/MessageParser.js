@@ -8,10 +8,13 @@ class MessageParser {
 
   getBestAnswer(answers) {
     if (answers.length > 0) {
-        return answers[1]._source;
+        return answers[0]._source;
+    } else {
+        return null;
     }
   }
   defaultMethods(message) {
+      console.log('default methods')
     const lowerCaseMessage = message.toLowerCase()
     
     if (lowerCaseMessage.includes("hello")) {
@@ -33,6 +36,10 @@ class MessageParser {
   }
   chooseAction(message,answer) {
     this.actionProvider.updateAnswer(answer);
+    if (!answer) {
+        this.defaultMethods(message);
+        return;
+    }
     switch (answer.answerType) {
         case "text_with_links": this.actionProvider.handleTextWithLinks(answer.answerText);
         break;
@@ -48,7 +55,7 @@ class MessageParser {
     const answers = await QuestionsService.getPossibleAnswers(message);
     console.log('answers',answers);
     const answer = this.getBestAnswer(answers);
-    console.log(answer);
+    console.log('best answer ',answer);
     this.chooseAction(message,answer);
 
      
