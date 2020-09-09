@@ -69,7 +69,7 @@ const config = {
           {
             text: "ZenDesk's CS Live - How to create a zoning?",
             url:
-              "https://uxanalyser.zendesk.com/hc/en-gb/articles/360001095054",
+              "https://uxanalyser.zendesk.com/hc/en-gb/articles/360006900473--CS-Live-How-to-create-a-zoning-",
             id: 6,
           },
           {

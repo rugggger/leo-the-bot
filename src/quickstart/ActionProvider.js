@@ -22,7 +22,7 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  handleSessionReplayList= () => {
+  handleSessionReplayList = () => {
     const message = this.createChatBotMessage(
       "Brilliant, I've got the some interesting resources for you on Session Replay:",
       {
@@ -33,7 +33,7 @@ class ActionProvider {
     this.updateChatbotState(message);
   };
 
-  handleCsLiveList= () => {
+  handleCsLiveList = () => {
     const message = this.createChatBotMessage(
       "Yeah we have something new on CS Live but we do have guideline for it:",
       {
