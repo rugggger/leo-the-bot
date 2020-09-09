@@ -20,7 +20,7 @@ const config = {
     {
       widgetName: "Links",
       widgetFunc: (props) => <LinkList {...props} />,
-      mapStateToProps: ["answer"],
+      mapStateToProps: ["answer","messages"],
     },
     {
         widgetName: "thumbs",

@@ -4,7 +4,13 @@ import "./Walkme.css"
 const Walkme = (props) => {
   console.log('props are ', props);
   const { answer } = props;
+  if (!answer) {
+    return null
+  }
   const walkmeWidget = answer.widgets.find(w => w.type === 'Walkme');
+  if (!walkmeWidget) {
+    return null
+  }
   console.log('walk', walkmeWidget);
   const stepsMarkup = walkmeWidget.params.steps.map((step,index) => (
     <li key={index} className="walkme-list-item">
