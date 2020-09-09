@@ -8,7 +8,7 @@ import Walkme from "../widgets/Walkme/Walkme";
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
-    createChatBotMessage(`Hi, what would you like to do in CS ?`, {
+    createChatBotMessage(`Hello there. I'm Leo the Bot, here to help you with any questions you have about using CS. Please ask me a question or select one of the below options.`, {
       widget: "learningOptions",
     }),
   ],
