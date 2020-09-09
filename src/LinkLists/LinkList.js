@@ -2,6 +2,7 @@ import React from "react";
 import "./LinkList.css";
 
 const LinkList = (props) => {
+    console.log('props are ', props);
   const { answer } = props;
   const linksWidget = answer.widgets.find(w => w.type === 'Links');
   const options = linksWidget.params.options;

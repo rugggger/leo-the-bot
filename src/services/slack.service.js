@@ -16,10 +16,11 @@ export default class SlackService {
         const endpoint = process.env.REACT_APP_SLACK_ENDPOINT;
         const url = `${endpoint}/${channelObj.code}`
         const data = {
-            text: "sent from chatbot"
+            text: `Couldn't answer the question: ${message}`
         }
         console.log('send message to slack ', message, channel);
-        if (process.env.NODE_ENV==='development') {
+        console.log('REACT_APP_SEND_TO_SLACK',process.env.REACT_APP_SEND_TO_SLACK)
+        if (!parseInt(process.env.REACT_APP_SEND_TO_SLACK)) {
             return;
         }
 
