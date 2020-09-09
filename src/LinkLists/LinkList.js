@@ -2,7 +2,10 @@ import React from "react";
 import "./LinkList.css";
 
 const LinkList = (props) => {
-  const linkMarkup = props.options.map((link) => (
+  const { answer } = props;
+  const linksWidget = answer.widgets.find(w => w.type === 'Links');
+  const options = linksWidget.params.options;
+  const linkMarkup = options.map((link) => (
     <li key={link.id} className="link-list-item">
       <a
         href={link.url}

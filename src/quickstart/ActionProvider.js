@@ -6,6 +6,26 @@ class ActionProvider {
     this.setState = setStateFunc;
   }
 
+  updateAnswer(answer) {
+      this.setState((state) => ({
+        ...state,
+        answer,
+      }));
+  }
+  handleAnswer(message,answer) {   
+      return true;
+  }
+  handleTextWithLinks(answerText){
+    const message = this.createChatBotMessage(
+        answerText,
+        {
+          widget: "zoningLinks",
+        }
+      );
+  
+      this.updateChatbotState(message);
+
+  }
   greet() {
     const greetingMessage = this.createChatBotMessage("Hi, friend.");
     this.updateChatbotState(greetingMessage);

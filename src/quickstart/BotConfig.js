@@ -19,6 +19,7 @@ const config = {
     {
       widgetName: "zoningLinks",
       widgetFunc: (props) => <LinkList {...props} />,
+      mapStateToProps: ["answer"],
       props: {
         options: [
           {
