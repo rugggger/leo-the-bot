@@ -1,6 +1,6 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
-import LearningOptions from "../LearningOptions/LearningOptions";
+import OptionsList from "../OptionsList/OptionsList";
 import LinkList from "../widgets/LinkLists/LinkList";
 import Thumbs from "../widgets/Thumbs/Thumbs";
 import BotAvatar from "../chatCustomComponents/BotAvatar";
@@ -9,13 +9,31 @@ const config = {
   botName: "Leo the Bot",
   initialMessages: [
     createChatBotMessage(`Hello there. I'm Leo the Bot, here to help you with any questions you have about using CS. Please ask me a question or select one of the below options.`, {
-      widget: "learningOptions",
+      widget: "OptionsList",
     }),
   ],
   widgets: [
     {
-      widgetName: "learningOptions",
-      widgetFunc: (props) => <LearningOptions {...props} />,
+      widgetName: "OptionsList",
+      widgetFunc: (props) => <OptionsList {...props} />,
+      mapStateToProps: ["answer","messages"],
+      props: {options : [
+        {
+          text: "Zoning",
+          optionId: "get_zoning_links",
+          id: 1,
+        },
+        { 
+          text: "Session Replay",
+          optionId: "get_session_replay_links", 
+          id: 2 
+        },
+        { 
+          text: "CS Live", 
+          optionId: "get_cslive_links",
+          id: 3 
+        },
+      ]}
     },
     {
       widgetName: "Links",

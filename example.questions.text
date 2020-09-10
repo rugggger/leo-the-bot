@@ -1,0 +1,134 @@
+"hits" : [
+    {
+      "_index" : "dev_questions",
+      "_type" : "_doc",
+      "_id" : "u4iIcnQBkKIuYBrzGdk8",
+      "_score" : 1.0,
+      "_source" : {
+        "category" : "Segments",
+        "optionId": "get_session_replay_links",
+        "question" : "Can you give me the documentation for session replay ?",
+        "answerText" : "Yes. here you go.",
+        "answerType" : "text_with_links",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+              "options" : [
+                {
+                  "text" : "ZenDesk's Introduction to Session Replay",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/articles/360001095054",
+                  "id" : 4
+                },
+                {
+                  "text" : "Content Square University's Training on Session Replay",
+                  "url" : "https://learn.contentsquare.com/series/contentsquare-training-program/session-replay-3",
+                  "id" : 5
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "_index" : "dev_questions",
+      "_type" : "_doc",
+      "_id" : "Coh3cnQBkKIuYBrzX9hO",
+      "_score" : 1.0,
+      "_source" : {
+        "category" : "Segments",
+        "question" : "Can you give me the documentation for zoning ?",
+        "answerText" : "Yes. here you go.",
+        "answerType" : "text_with_links",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+              "options" : [
+                {
+                  "text" : "ZenDesk's Introduction to Zoning",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/articles/360010600620",
+                  "id" : 1
+                },
+                {
+                  "text" : "Space Academy Training on Zoning",
+                  "url" : "https://academy.contentsquare.com/contentsquare-solution-training/265702/scorm/16jomvb7ix250",
+                  "id" : 2
+                },
+                {
+                  "text" : "Content Square University's Training on Zoning Analysis",
+                  "url" : "https://learn.contentsquare.com/series/contentsquare-training-program/zoning-analysis-2",
+                  "id" : 3
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "_index" : "dev_questions",
+      "_type" : "_doc",
+      "_id" : "d4iYcnQBkKIuYBrzsNun",
+      "_score" : 1.0,
+      "_source" : {
+        "category" : "Segments",
+        "question" : "Can you give me the documentation for live links ?",
+        "answerText" : "Yes. here you go.",
+        "answerType" : "text_with_links",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+              "options" : [
+                {
+                  "text" : "ZenDesk's CS Live - How to create a zoning?",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/articles/360006900473--CS-Live-How-to-create-a-zoning-",
+                  "id" : 6
+                },
+                {
+                  "text" : "CS Live Quick Start Guide",
+                  "url" : "https://go.contentsquare.com/hubfs/%5BCS%20Live%5D%20Booklet%20Metrics.pdf",
+                  "id" : 7
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "_index" : "dev_questions",
+      "_type" : "_doc",
+      "_id" : "a4gPc3QBkKIuYBrzgec9",
+      "_score" : 1.0,
+      "_source" : {
+        "category" : "Segments",
+        "question" : "Can walk me through setup ?",
+        "answerText" : "Yes. Follow those steps.",
+        "answerType" : "walkme",
+        "widgets" : [
+          {
+            "type" : "Walkme",
+            "params" : {
+              "steps" : [
+                {
+                  "text" : "1. Open the menu.",
+                  "command" : """document.querySelector(".open-menu").click()""",
+                  "selector" : "test",
+                  "id" : 1
+                },
+                {
+                  "text" : """2. Click on "Profile".""",
+                  "command" : """document.querySelector(".menu-profile").click()""",
+                  "selector" : "test",
+                  "id" : 2
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]

@@ -1,5 +1,6 @@
 // ActionProvider starter code
 import SlackService from "../services/slack.service";
+import QuestionsService from "../services/questions.service";
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
@@ -7,72 +8,81 @@ class ActionProvider {
   }
 
   updateAnswer(answer) {
-      this.setState((state) => ({
-        ...state,
-        answer,
-      }));
+    this.setState((state) => ({
+      ...state,
+      answer,
+    }));
   }
-  handleAnswer(message,answer) {   
-      return true;
-  }
-  handleTextWithLinks(answerText){
-    const message = this.createChatBotMessage(
-        answerText,
-        {
-          widget: "Links",
-        }
-      );
-  
-      this.updateChatbotState(message);
 
+  createClientMesssage = (message) => {
+    const clientMessage = {
+      message: message,
+      type: "user",
+      id: Math.random(),
+    };
+
+    return clientMessage;
+  };
+
+  setClientMessage = (message) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      messages: [...prevState.messages, message],
+    }));
+  };
+
+  async handleOptionsList(option) {
+    const clientMessage = this.createClientMesssage(
+      "I'm looking for links about " + option.text
+    );
+    const answers = await QuestionsService.getPossibleAnswers({
+      option: option.optionId,
+    });
+    const answer = QuestionsService.getBestAnswer(answers);
+    this.setClientMessage(clientMessage);
+    this.chooseAction("", answer);
+  }
+  handleTextWithLinks(answerText) {
+    const message = this.createChatBotMessage(answerText, {
+      widget: "Links",
+    });
+
+    this.updateChatbotState(message);
   }
   handleWalkme(answerText) {
-    const message = this.createChatBotMessage(
-        answerText,
-        {
-          widget: "Walkme",
-        }
-      );
-  
-      this.updateChatbotState(message);
+    const message = this.createChatBotMessage(answerText, {
+      widget: "Walkme",
+    });
+    this.updateChatbotState(message);
   }
+
   greet() {
     const greetingMessage = this.createChatBotMessage("Hi, friend.");
     this.updateChatbotState(greetingMessage);
   }
 
-  handleZoningList = () => {
-    const message = this.createChatBotMessage(
-      "Fantastic, I've got the following resources for you on Zoning:",
-      {
-        widget: "zoningLinks",
-      }
-    );
 
-    this.updateChatbotState(message);
-  };
 
-  handleSessionReplayList = () => {
-    const message = this.createChatBotMessage(
-      "Brilliant, I've got the some interesting resources for you on Session Replay:",
-      {
-        widget: "sessionReplayLinks",
-      }
-    );
+  chooseAction(message, answer) {
+    console.log("choosing answer : Action Provider");
+    this.updateAnswer(answer);
+    if (!answer) {
+      console.log("NO ANSWER");
+      return;
+    }
 
-    this.updateChatbotState(message);
-  };
-
-  handleCsLiveList = () => {
-    const message = this.createChatBotMessage(
-      "Yeah we have something new on CS Live but we do have guideline for it:",
-      {
-        widget: "csLiveLinks",
-      }
-    );
-
-    this.updateChatbotState(message);
-  };
+    switch (answer.answerType) {
+      case "text_with_links":
+        this.handleTextWithLinks(answer.answerText);
+        break;
+      case "walkme":
+        this.handleWalkme(answer.answerText);
+        break;
+      default:
+      // this.defaultMethods(message);
+    }
+    return;
+  }
 
   handleNoAnswerMatched(parsedMessage) {
     const message = this.createChatBotMessage(
