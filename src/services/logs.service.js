@@ -1,6 +1,13 @@
 import axios from "axios";
 
 export default class LogsService {
+  
+  static AddInitData(data){
+      data["startedAt"] = Date.now()
+
+
+
+  }  
   static  Log(state, message, answer) {
     const { messages , chatId } = state;  
     const endpoint = process.env.REACT_APP_ELASTIC_ENDPOINT;
@@ -25,6 +32,7 @@ export default class LogsService {
     if (chatId) {
         return axios.post(`${endpoint}/${indice}/_doc/${chatId}`, data);
     } else {
+        this.AddInitData(data);
         return axios.post(`${endpoint}/${indice}/_doc`, data);
     }
   }

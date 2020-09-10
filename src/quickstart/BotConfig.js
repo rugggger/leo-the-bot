@@ -22,18 +22,18 @@ const config = {
       mapStateToProps: ["answer","messages"],
       props: {options : [
         {
-          text: "Zoning",
-          optionId: "get_zoning_links",
+          text: "Report an issue",
+          optionId: "zendesk_report_an_issue",
           id: 1,
         },
         { 
-          text: "Session Replay",
-          optionId: "get_session_replay_links", 
+          text: "Leave product feedback",
+          optionId: "zendesk_product_feedback", 
           id: 2 
         },
         { 
-          text: "CS Live", 
-          optionId: "get_cslive_links",
+          text: "Request an integration", 
+          optionId: "zendesk_request_integration",
           id: 3 
         },
       ]}
