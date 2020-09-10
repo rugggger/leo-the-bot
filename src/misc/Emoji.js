@@ -15,6 +15,10 @@ const emojis = {
     robot: {
         aria: "robot",
         code: "&#129302;"
+    },
+    expert: {
+        aria: "expert",
+        code: "../maleAgent.png"
     }
 }
 const Emoji = (props) => {
