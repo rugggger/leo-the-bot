@@ -1,12 +1,21 @@
 // in src/components/LearningOptions/LearningOptions.jsx
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./OptionsList.css";
 
 const OptionsList = (props) => {
 
-  const { options, actionProvider } = props;
+  const { answer , defaultOptions, actionProvider } = props;
+  const [ options , setOptions] = useState(defaultOptions);
+
+  useEffect(()=>{
+    if (answer) {
+      const optionsWidget = answer.widgets.find(w => w.type === 'OptionsList');
+      setOptions(optionsWidget.params.options);
+    }
+   
+  },[]);
 
   const handlerOption = (option)=>{
     actionProvider.handleOptionsList(option);

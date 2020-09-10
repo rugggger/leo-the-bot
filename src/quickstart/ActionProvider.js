@@ -61,6 +61,13 @@ class ActionProvider {
     this.updateChatbotState(message);
 
   }
+  handleTextWithOptions(answerText) {
+    const message = this.createChatBotMessage(answerText,{
+      widget: "OptionsList",
+    });
+    this.updateChatbotState(message);
+
+  }
   handleTextWithThumbs(answerText) {
     const message = this.createChatBotMessage(answerText,{
       widget: "Thumbs",
@@ -68,6 +75,7 @@ class ActionProvider {
     this.updateChatbotState(message);
 
   }
+
   handleWalkme(answerText) {
     const message = this.createChatBotMessage(answerText, {
       widget: "Walkme",
@@ -100,6 +108,9 @@ class ActionProvider {
         break;
       case "text_with_links":
         this.handleTextWithLinks(answer.answerText);
+        break;
+      case "text_with_options":
+        this.handleTextWithOptions(answer.answerText);
         break;
       case "walkme":
         this.handleWalkme(answer.answerText);

@@ -10,9 +10,10 @@ const botGender =  (Math.random() > 0.5) ? 'male' : 'female';
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
-    createChatBotMessage(`Hello there. I'm Leo the Bot, here to help you with any questions you have about using CS. Please ask me a question or select one of the below options.`, {
-      widget: "OptionsList",
-    }),
+    createChatBotMessage(`Hello there. I'm Leo the Bot, here to help you with any questions you have about using CS.
+     Please ask me a question or select one of the below options.`,{
+        widget: "OptionsList",
+     }),
   ],
   state: {
       chatId: null
@@ -22,7 +23,7 @@ const config = {
       widgetName: "OptionsList",
       widgetFunc: (props) => <OptionsList {...props} />,
       mapStateToProps: ["answer","messages"],
-      props: {options : [
+      props: {defaultOptions : [
         {
           text: "Report an issue",
           optionId: "zendesk_report_an_issue",
