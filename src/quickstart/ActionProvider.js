@@ -1,6 +1,7 @@
 // ActionProvider starter code
 import SlackService from "../services/slack.service";
 import QuestionsService from "../services/questions.service";
+import LogsService from "../services/logs.service";
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {
     this.createChatBotMessage = createChatBotMessage;
@@ -28,6 +29,12 @@ class ActionProvider {
     this.setState((prevState) => ({
       ...prevState,
       messages: [...prevState.messages, message],
+    }));
+  };
+  setChatId = (chatId) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      chatId,
     }));
   };
 
@@ -63,8 +70,9 @@ class ActionProvider {
 
 
 
-  chooseAction(message, answer) {
+  chooseAction(message, answer, chatId) {
     console.log("choosing answer : Action Provider");
+    this.setChatId(chatId);
     this.updateAnswer(answer);
     if (!answer) {
       this.handleNoAnswerMatched(message);

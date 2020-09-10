@@ -1,4 +1,5 @@
 import QuestionsService from "../services/questions.service";
+import LogsService from "../services/logs.service";
 
 class MessageParser {
   constructor(actionProvider, state) {
@@ -9,12 +10,13 @@ class MessageParser {
 
  
   async parse(message) {
+    console.log('chat id ', this.state.chatId)
     const answers = await QuestionsService.getPossibleAnswers({
         text:message
     });
     const answer = QuestionsService.getBestAnswer(answers);
-    this.actionProvider.chooseAction(message,answer);
-
+    const logRes = await LogsService.Log(this.state,message,answer);
+    this.actionProvider.chooseAction(message,answer,logRes.data._id);
   }
 }
 

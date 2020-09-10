@@ -12,6 +12,9 @@ const config = {
       widget: "OptionsList",
     }),
   ],
+  state: {
+      chatId: null
+  },
   widgets: [
     {
       widgetName: "OptionsList",
