@@ -5,6 +5,8 @@ import LinkList from "../widgets/LinkLists/LinkList";
 import Thumbs from "../widgets/Thumbs/Thumbs";
 import BotAvatar from "../chatCustomComponents/BotAvatar";
 import Walkme from "../widgets/Walkme/Walkme";
+
+const botGender =  (Math.random() > 0.5) ? 'male' : 'female';
 const config = {
   botName: "Leo the Bot",
   initialMessages: [
@@ -57,7 +59,7 @@ const config = {
 
   ],
   customComponents: {
-    botAvatar: (props)=> <BotAvatar></BotAvatar>
+    botAvatar: (props)=> <BotAvatar {...props} gender={botGender} ></BotAvatar>
   },
   customStyles: {
     botMessageBox: {
