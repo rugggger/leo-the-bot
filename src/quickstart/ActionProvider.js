@@ -67,7 +67,7 @@ class ActionProvider {
     console.log("choosing answer : Action Provider");
     this.updateAnswer(answer);
     if (!answer) {
-      console.log("NO ANSWER");
+      this.handleNoAnswerMatched(message);
       return;
     }
 
@@ -79,7 +79,7 @@ class ActionProvider {
         this.handleWalkme(answer.answerText);
         break;
       default:
-      // this.defaultMethods(message);
+       this.handleNoAnswerMatched(message);
     }
     return;
   }

@@ -7,15 +7,6 @@ class MessageParser {
   }
 
 
-  defaultMethods(message) {
-    const lowerCaseMessage = message.toLowerCase()
-    
-    if (lowerCaseMessage.includes("hello")) {
-      this.actionProvider.greet();
-      return;
-    }
-    this.actionProvider.handleNoAnswerMatched(message); 
-  }
  
   async parse(message) {
     const answers = await QuestionsService.getPossibleAnswers({
