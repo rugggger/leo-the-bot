@@ -56,6 +56,18 @@ class ActionProvider {
 
     this.updateChatbotState(message);
   }
+  handleText(answerText) {
+    const message = this.createChatBotMessage(answerText);
+    this.updateChatbotState(message);
+
+  }
+  handleTextWithThumbs(answerText) {
+    const message = this.createChatBotMessage(answerText,{
+      widget: "Thumbs",
+    });
+    this.updateChatbotState(message);
+
+  }
   handleWalkme(answerText) {
     const message = this.createChatBotMessage(answerText, {
       widget: "Walkme",
@@ -80,6 +92,12 @@ class ActionProvider {
     }
 
     switch (answer.answerType) {
+      case "text":
+        this.handleText(answer.answerText);
+        break;
+      case "text_with_thumbs":
+        this.handleTextWithThumbs(answer.answerText); 
+        break;
       case "text_with_links":
         this.handleTextWithLinks(answer.answerText);
         break;
@@ -96,7 +114,7 @@ class ActionProvider {
     const message = this.createChatBotMessage(
       `Sorry, I don't understand "${parsedMessage}"`,
       {
-        widget: "thumbs",
+        widget: "Thumbs",
       }
     );
 

@@ -44,7 +44,7 @@ const config = {
       mapStateToProps: ["answer","messages"],
     },
     {
-        widgetName: "thumbs",
+        widgetName: "Thumbs",
         widgetFunc: (props) => <Thumbs {...props} />,
         mapStateToProps: ["lastMessage","messages"],
     },
