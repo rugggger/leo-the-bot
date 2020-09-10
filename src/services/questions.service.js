@@ -34,7 +34,7 @@ export default class QuestionsService {
   static async getPossibleAnswers(options) {
     const { text, option } = options;
     const endpoint = process.env.REACT_APP_ELASTIC_ENDPOINT;
-    const indice = "dev_questions";
+    const indice = process.env.REACT_APP_ELASTIC_QUESTIONS_INDEX;
     const query = QuestionsService.buildQuery({
       text,
       option

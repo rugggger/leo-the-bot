@@ -4,7 +4,7 @@ export default class LogsService {
   static  Log(state, message, answer) {
     const { messages , chatId } = state;  
     const endpoint = process.env.REACT_APP_ELASTIC_ENDPOINT;
-    const indice = "dev_logs";
+    const indice = process.env.REACT_APP_ELASTIC_LOG_INDEX;
     const messagesMapped = messages.map((m) => {
       return {
         message: m.message
