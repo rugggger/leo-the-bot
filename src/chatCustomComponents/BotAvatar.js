@@ -1,10 +1,12 @@
 import React from 'react';
-import Emoji from '../misc/Emoji';
+import maleAgent from '../assets/images/maleAgent.png';
+import femaleAgent from '../assets/images/femaleAgent.png';
+
 const BotAvatar = (props) => {
-    const agent = Math.floor(Math.random() * 2);
-    const returnString = agent == 1? "maleAgent.png" : "femaleAgent.png";
+    const randNumber = Math.floor(Math.random() * 2);
+    const agent = randNumber == 1? maleAgent : femaleAgent;
     return (
-        <div><img aria-label='expert' src={ returnString } width='35' heigh='35'></img></div>
+        <div><img aria-label='expert' src={ agent } width='35' heigh='35'></img></div>
     )
 }
 export default BotAvatar;
