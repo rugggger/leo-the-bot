@@ -1,10 +1,5 @@
 "hits" : [
-    {
-      "_index" : "dev_questions",
-      "_type" : "_doc",
-      "_id" : "u4iIcnQBkKIuYBrzGdk8",
-      "_score" : 1.0,
-      "_source" : {
+     {
         "category" : "Segments",
         "optionId": "get_session_replay_links",
         "question" : "Can you give me the documentation for session replay ?",
@@ -30,13 +25,7 @@
           }
         ]
       }
-    },
     {
-      "_index" : "dev_questions",
-      "_type" : "_doc",
-      "_id" : "Coh3cnQBkKIuYBrzX9hO",
-      "_score" : 1.0,
-      "_source" : {
         "category" : "Segments",
         "question" : "Can you give me the documentation for zoning ?",
         "answerText" : "Yes. here you go.",
@@ -66,13 +55,8 @@
           }
         ]
       }
-    },
+    
     {
-      "_index" : "dev_questions",
-      "_type" : "_doc",
-      "_id" : "d4iYcnQBkKIuYBrzsNun",
-      "_score" : 1.0,
-      "_source" : {
         "category" : "Segments",
         "question" : "Can you give me the documentation for live links ?",
         "answerText" : "Yes. here you go.",
@@ -97,13 +81,8 @@
           }
         ]
       }
-    },
+    
     {
-      "_index" : "dev_questions",
-      "_type" : "_doc",
-      "_id" : "a4gPc3QBkKIuYBrzgec9",
-      "_score" : 1.0,
-      "_source" : {
         "category" : "Segments",
         "question" : "Can walk me through setup ?",
         "answerText" : "Yes. Follow those steps.",
@@ -130,5 +109,388 @@
           }
         ]
       }
-    }
+
+          {
+        "category" : "General",
+        "question" : "Report an issue",
+        "answerText" : "Use this link to report an issue:",
+        "answerType" : "text_with_links",
+         "optionId": "zendesk_report_an_issue",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+               "options" : [
+                {
+                  "text" : "Report an issue",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/restricted?return_to=https%3A%2F%2Fuxanalyser.zendesk.com%2Fhc%2Fen-gb%2Frequests%2Fnew%3Fticket_form_id%3D16842",
+                  "id" : 6
+                }]
+
+            }
+          }
+        ]
+      }
+          {
+        "category" : "General",
+        "question" : "Leave product feedback",
+        "answerText" : "Use this link to report an issue:",
+        "answerType" : "text_with_links",
+         "optionId": "zendesk_product_feedback",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+               "options" : [
+                {
+                  "text" : "Leave product feedback",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/requests/new?ticket_form_id=360000523599",
+                  "id" : 6
+                }]
+
+            }
+          }
+        ]
+      }
+            {
+        "category" : "General",
+        "question" : "Request integration",
+        "answerText" : "Use this link to request an integration:",
+        "answerType" : "text_with_links",
+         "optionId": "zendesk_request_integration",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+               "options" : [
+                {
+                  "text" : "Request integration",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/requests/new?ticket_form_id=360000560839",
+                  "id" : 6
+                }]
+
+            }
+          }
+        ]
+      }
+
+              {
+        "category" : "General",
+        "question" : "bye",
+        "answerText" : "Bye bye ! Please give me a thumbs up if I helped.",
+        "answerType" : "text_with_thumbs",
+         "optionId": "zendesk_request_integration",
+        "widgets" : [
+          {
+            "type" : "Thumbs",
+            "params" : {
+              "scoreName":"chatbot_helped"
+            }
+          }
+        ]
+      }
+
+
+     {
+        "category" : "General",
+        "question" : "help",
+        "answerText" : "Maybe the following options will be of help?",
+        "answerType" : "text_with_options",
+       "optionId": "general_help",
+        "widgets" : [
+          {
+            "type" : "OptionsList",
+            "params": { "options" : [
+        {
+          "text": "Report an issue",
+          "optionId": "zendesk_report_an_issue",
+          "id": 1
+        },
+        { 
+          "text": "Leave product feedback",
+          "optionId": "zendesk_product_feedback", 
+          "id": 2 
+        },
+        { 
+          "text": "Request an integration", 
+          "optionId": "zendesk_request_integration",
+          "id": 3 
+        }
+      ]}
+     
+          }]
+   }
+       {
+        "category" : "General",
+        "question" : "have a problem",
+        "answerText" : "I am sad to hear it isn't working the way you expect. Perhaps you would like to open a support ticket?",
+        "answerType" : "text_with_options",
+        "widgets" : [
+          {
+            "type" : "OptionsList",
+            "params": { "options" : [
+        {
+          "text": "Report an issue",
+          "optionId": "zendesk_report_an_issue",
+          "id": 1
+        }
+      ]}
+     
+          }]
+   }
+    {
+        "category" : "General",
+        "question" : "not working",
+        "answerText" : "I am sad to hear it isn't working the way you expect. Perhaps you would like to open a support ticket?",
+        "answerType" : "text_with_options",
+        "widgets" : [
+          {
+            "type" : "OptionsList",
+            "params": { "options" : [
+        {
+          "text": "Report an issue",
+          "optionId": "zendesk_report_an_issue",
+          "id": 1
+        }
+      ]}
+     
+          }]
+   }
+       {
+        "category" : "General",
+        "question" : "doesn't work",
+        "answerText" : "I am sad to hear it isn't working the way you expect. Perhaps you would like to open a support ticket?",
+        "answerType" : "text_with_options",
+        "widgets" : [
+          {
+            "type" : "OptionsList",
+            "params": { "options" : [
+        {
+          "text": "Report an issue",
+          "optionId": "zendesk_report_an_issue",
+          "id": 1
+        }
+      ]}
+     
+          }]
+   }
+
+
+
+
+          
+        ]
+      }
+
+
+
+              {
+        "category" : "Mapping",
+        "question" : "Why can't I edit some mappings?",
+        "answerText" : "You can't edit mappings with a lock icon next to them as these have been created by CS team. Duplicate these instead and make the required changes to your own copy.",
+        "answerType" : "text",
+      }
+
+              {
+        "category" : "Mapping",
+        "question" : "What percent exhaustivity should I be aiming for?",
+        "answerText" : "You should aim for your mapping to be 95-98% exhaustive.",
+        "answerType" : "text"
+      }
+                {
+        "category" : "Mapping",
+        "question" : "I identify all my product in different category, how can I merge them ?",
+        "answerText" : "The better way to do it, it's to delete all the concern pages and create a new page with all the URLs you want to merge together. Use custom variables or a common identificator in the URL to build your new page. ",
+        "answerType" : "text"
+      }
+
+              {
+        "category" : "Segments",
+        "question" : "Why is my bounce rate in CS different to GA/Adobe?",
+        "answerText" : "Our calculation of bounce rate is the number of visitors who viewed only 1 page divided by the number of visitors who entered the site. This can differ from other analytics tools as bounce rate is sometimes defined as the percentage of visits with only one interaction on the page.",
+        "answerType" : "text"
+      }
+                  {
+        "category" : "Zoning",
+        "question" : "Why can't I use shortcuts from my zone - to create a goal/segment, add to workspaces, etc.?",
+        "answerText" : "Shortcuts are only available when using a zoning based on a page within a defined mapping, not single URL.",
+        "answerType" : "text"
+      }
+                      {
+        "category" : "Zoning",
+        "question" : "How do I save a snapshot of a dynamic feature e.g. menu that only opens on hover?",
+        "answerText" : "When creating a new snapshot, use the keyboard shortcut Alt+S (Windows) or Control+S (Mac).",
+        "answerType" : "text"
+      }
+                        {
+        "category" : "Zoning",
+        "question" : "Why I don't have data on my text block? ",
+        "answerText" : "You are probably looking at hover rate or KPI based on hover rate. Contentsquare doesn't collect this data on text block.",
+        "answerType" : "text"
+      }
+                       {
+        "category" : "Zoning",
+        "question" : "Can I use the zoning module on a page that no longer exists?",
+        "answerText" : "Yes, you can use the retroactive backgrounds",
+        "answerType" : "text"
+      }
+                        {
+        "category" : "Zoning",
+        "question" : "What is the best approach to analysing PLP filter performance?",
+        "answerText" : "We recommend this Help Centre article to help guide you through your filter analysis.",
+        "answerType" : "text_with_links",
+        "widgets" : [
+          {
+            "type" : "Links",
+            "params" : {
+              "options" : [
+                {
+                  "text" : "Filter analysis",
+                  "url" : "https://uxanalyser.zendesk.com/hc/en-gb/articles/360016458734-How-to-analyze-a-Filter",
+                  "id" : 6
+                }
+              ]
+            }
+          }
+        ]
+      }
+
+                          {
+        "category" : "Easter Questions",
+        "question" : "Leo are you male or female?",
+        "answerText" : "Sometimes male, sometimes female.",
+        "answerType" : "text"
+      }
+
+                             {
+        "category" : "Easter Questions",
+        "question" : "what is the time?",
+        "answerText" : "I am a chatbot, not a clock.",
+        "answerType" : "text"
+      }
+                                {
+        "category" : "Easter Questions",
+        "question" : "What do you know?",
+        "answerText" : "I don't have the time to tell you everything I know.",
+        "answerType" : "text"
+      }
+                                      {
+        "category" : "Easter Questions",
+        "question" : "What do you do?",
+        "answerText" : "Work all day.",
+        "answerType" : "text"
+      }
+                                   {
+        "category" : "Easter Questions",
+        "question" : "what is your problem?",
+        "answerText" : "0111010000010100011111101111111.",
+        "answerType" : "text"
+      }
+                                         {
+        "category" : "Easter Questions",
+        "question" : "want to have a drink?",
+        "answerText" : "Not right now.",
+        "answerType" : "text"
+      }
+                                            {
+        "category" : "Easter Questions",
+        "question" : "why do you wear glasses?",
+        "answerText" : "To look smart.",
+        "answerType" : "text"
+      }
+                                               {
+        "category" : "Easter Questions",
+        "question" : "do you like ice cream?",
+        "answerText" : "Who doesn't",
+        "answerType" : "text"
+      }
+                                                 {
+        "category" : "Easter Questions",
+        "question" : "how tall are you?",
+        "answerText" : "180 pixels.",
+        "answerType" : "text"
+      }
+                                                     {
+        "category" : "Easter Questions",
+        "question" : "are you married?",
+        "answerText" : "Would you like to propose?",
+        "answerType" : "text"
+      }
+
+                                                  {
+        "category" : "Easter Questions",
+        "question" : "tea or coffee?",
+        "answerText" : "Tea.",
+        "answerType" : "text"
+      }
+                                                        {
+        "category" : "Easter Questions",
+        "question" : "What did you have for lunch?",
+        "answerText" : "300g piece of Siloin steak, with chips.",
+        "answerType" : "text"
+      }
+                                                              {
+        "category" : "Easter Questions",
+        "question" : "what's your favorite film?",
+        "answerText" : "2001: Space Odyssey",
+        "answerType" : "text"
+      }      
+                                                            {
+        "category" : "Easter Questions",
+        "question" : "who's your favorite director?",
+        "answerText" : "Stanley Kubric",
+        "answerType" : "text"
+      }
+                                                               {
+        "category" : "Easter Questions",
+        "question" : "what's my name?",
+        "answerText" : "Don't you know your own name?",
+        "answerType" : "text"
+      }
+                                                                   {
+        "category" : "Easter Questions",
+        "question" : "vous parlez francais?",
+        "answerText" : "Pas tres bien.",
+        "answerType" : "text"
+      }
+      {
+        "category" : "Easter Questions",
+        "question" : "who do you vote for?",
+        "answerText" : "I vote for the right candidate.",
+        "answerType" : "text"
+      }
+            {
+        "category" : "Easter Questions",
+        "question" : "do you have a family?",
+        "answerText" : "I don't disclose personal information to strangers.",
+        "answerType" : "text"
+      }
+                  {
+        "category" : "Easter Questions",
+        "question" : "what's your name?",
+        "answerText" : "Read the title at the top of the chatbox.",
+        "answerType" : "text"
+      }
+                      {
+        "category" : "Easter Questions",
+        "question" : "what's your email?",
+        "answerText" : "leo-the-bot@contentsquare.com",
+        "answerType" : "text"
+      }
+                          {
+        "category" : "Easter Questions",
+        "question" : "I hate you.",
+        "answerText" : "I wish you didn't.",
+        "answerType" : "text"
+      }
+                               {
+        "category" : "Easter Questions",
+        "question" : "I love you.",
+        "answerText" : "And I thank you for that.",
+        "answerType" : "text"
+      }
+  
+
+
+    
   ]
